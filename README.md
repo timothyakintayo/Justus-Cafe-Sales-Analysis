@@ -118,6 +118,7 @@ A significant part of the data was dropped while trying to match the price, quan
 ### Disclaimer
 This dataset and report are for demonstration purposes only and do not represent any actual company.
 
+** Thank you for your time** 🙏
 
 
 
