@@ -29,7 +29,7 @@ Café Sales Data: The primary dataset used for this is analysis is the "dirty_ca
 ## Data Cleaning and Transformation
 The raw dataset contained missing, inconsistent, and incorrect values. The data cleaning was done using the power query editor. First the rows with no transaction date, no location and no payment methods were removed. The sales data in some instances had price without quantity, quantity without price, sales amount with price but no quantity. Since sales amount equals price times quantity. I created the following If condition logic: 
 // This formula calculates the unit price when missing, using total spent divided by quantity
-Price Column
+**Price Column Calculation**
 ```
 m
 = if [Price Per Unit] = null or [Price Per Unit] = "" or [Price Per Unit] = "UNKNOWN" or [Price Per Unit] = "ERROR" then 
@@ -39,7 +39,7 @@ m
 else try Number.From([Price Per Unit]) otherwise "Unknown"
 ```
 \\ This formula calculates the total amount spent when missing, using price multiplied by quantity
-Sales Amount
+**Sales Amount Column Calculation**
 ```
 m
 = if [Total Spent] = null or [Total Spent] = "" or [Total Spent] = "UNKNOWN" or [Total Spent] = "ERROR" then 
@@ -58,6 +58,39 @@ m
    then "Weekend" 
    else "Weekday"
 ```
+## Data Modeling
+In Power Query, the data was splitted into fact and dimension tables and modelled using the diagram view in Power Pivot.
+- Fact and dimension tables created in Power Query.
+- Modeled into a star schema in Power Pivot.
+- **Key DAX measures:**
+\\ These measures were created in Power Pivot to calculate revenue trends and transaction metrics for the dashboard.
+```
+DAX
+Quarterly Revenue = TOTALQTD([Revenue], Dim_Calendar[Date])
+Total Transactions = COUNT(Dim_Transaction[Transaction ID])
+Average Transaction Value = AVERAGE(Fact[New_Total_Spent])
+```
+## Dashboard
+The interactive dashboard contains two pages
+
+Interactive Dashboard
+Screenshots:
+
+## Key Insights
+- Top Product: Salad – highest transactions and revenue.
+- Peak Day (Transactions): Friday.
+- Peak Day (Revenue): Thursday.
+- Payment Split (High-Value Transactions ≥ $20): 37% digital wallet, 33% cash, 30% credit card.
+- Channel Preference: High-spending customers prefer in-store.
+- Revenue Peaks: January (monthly), Q1 (quarterly).
+- Customer Spend: 50% spend $4–12, 25% above $12, and 5% spend above $20
+
+## Recommendations
+- Shift from Cash to Digital: Offer digital wallet/card discounts, loyalty points, and speed-focused campaigns (“Skip the wait: Pay digitally”). Train staff to promote cashless options during peak hours.
+- Upselling & Combos: Introduce combo deals (e.g., Salad + Juice, Sandwich + Coffee) and train staff to suggest add-ons during busy periods.
+- In-Store Experience: Customers spend more in-store; enhance dine-in experience and menu variety (e.g., more salad options).
+- Revenue Optimization: Leverage Fridays (highest traffic) for upselling campaigns.
+
 
 
 
