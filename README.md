@@ -101,7 +101,7 @@ Screenshots:
 - Marketing Manager: Segment customers, design promotions.
 
 ### Limitations
-A large part of the data was lost while trying to match the price, quantity and amount spent column especially the price column. It was impossible to perfectly match the items based on the price because items such as "Smoothie and Sandwich", "Juice and Cake" had the same prices. To avoid data bias, these rows were dropped. 
+A significant part of the data was dropped while trying to match the price, quantity and amount spent column especially the price column. This is because, It was impossible to perfectly match the items based on the price because items such as "Smoothie and Sandwich", "Juice and Cake" had the same prices. To avoid data bias, these rows were dropped. 
 ### Disclaimer
 This dataset and report are for demonstration purposes only and do not represent any actual company.
 
