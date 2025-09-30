@@ -1,15 +1,15 @@
 # Payment Optimization and Customer Behavior Analysis of Justus Café Customers
 ![Justus Café](cafe.jpg)
-## Introduction
+### Introduction
 Justus Café is experiencing mixed payment adoption across different transaction values, with heavy cash usage leading to long queues during peak hours. By analyzing customer payment behaviors, item preferences, and sales trends, this project provides actionable insights to:
 - Improve transaction efficiency
 - Enhance customer experience
 - Identify upselling and revenue optimization opportunities
   
-## Data Sources
-Café Sales Data: The primary dataset used for this is analysis is the "dirty_cafe_sales.csv" dataset obtained from Kaggle, containing information about the sales made by Justus Café. The dataset consist of 10000 rows and 12 columns.
+### Data Sources
+Café Sales Data: The primary dataset used for this is analysis is the "dirty_cafe_sales.csv" dataset obtained from [Kaggle](https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training?resource=download), containing information about the sales made by Justus Café. The dataset consist of 10000 rows and 12 columns.
 
-## Business Questions
+### Business Questions
 - What is the highest selling product by transaction count?
 - What day of the week records the highest sales?
 - How do payment methods (cash, credit card, digital wallet) vary across low-value (<= $4) and high-value (>= $20) transactions?
@@ -20,13 +20,13 @@ Café Sales Data: The primary dataset used for this is analysis is the "dirty_ca
 - What is the highest revenue-generating product, and what is the location preference?
 - Which channel (in-store vs. takeaway) produces the most sales?
 - Do sales peak during weekdays or weekends?
-## Tools Used
+### Tools Used
 - MS Excel
 - Power Query – data cleaning & transformation
 - Power Pivot (Star Schema) – fact & dimension modeling
 - DAX – revenue, transaction count, averages
 - Pivot Tables & Dashboards – interactive visuals
-## Data Cleaning and Transformation
+### Data Cleaning and Transformation
 The raw dataset contained missing, inconsistent, and incorrect values. The data cleaning was done using the power query editor. First the rows with no transaction date, no location and no payment methods were removed. The sales data in some instances had price without quantity, quantity without price, sales amount with price but no quantity. Since sales amount equals price times quantity. I created the following If condition logic: 
 // This formula calculates the unit price when missing, using total spent divided by quantity
 **Price Column Calculation**
@@ -58,7 +58,9 @@ m
    then "Weekend" 
    else "Weekday"
 ```
-## Data Modeling
+** Dataset After Cleaning
+The following dataset was obtained after cleaning [Cleaned_Dataset]()
+### Data Modeling
 In Power Query, the data was splitted into fact and dimension tables and modelled using the diagram view in Power Pivot.
 - Fact and dimension tables created in Power Query.
 - Modeled into a star schema in Power Pivot.
@@ -70,13 +72,15 @@ Quarterly Revenue = TOTALQTD([Revenue], Dim_Calendar[Date])
 Total Transactions = COUNT(Dim_Transaction[Transaction ID])
 Average Transaction Value = AVERAGE(Fact[New_Total_Spent])
 ```
-## Dashboard
+### Dashboard
 The interactive dashboard contains two pages
 
-Interactive Dashboard
+[Interactive Dashboard]()
 Screenshots:
+![Dashboard_Page_1]()
+![Dashboard_Page_2]()
 
-## Key Insights
+### Key Insights
 - Top Product: Salad – highest transactions and revenue.
 - Peak Day (Transactions): Friday.
 - Peak Day (Revenue): Thursday.
@@ -85,18 +89,20 @@ Screenshots:
 - Revenue Peaks: January (monthly), Q1 (quarterly).
 - Customer Spend: 50% spend $4–12, 25% above $12, and 5% spend above $20
 
-## Recommendations
+### Recommendations
 - Shift from Cash to Digital: Offer digital wallet/card discounts, loyalty points, and speed-focused campaigns (“Skip the wait: Pay digitally”). Train staff to promote cashless options during peak hours.
 - Upselling & Combos: Introduce combo deals (e.g., Salad + Juice, Sandwich + Coffee) and train staff to suggest add-ons during busy periods.
 - In-Store Experience: Customers spend more in-store; enhance dine-in experience and menu variety (e.g., more salad options).
 - Revenue Optimization: Leverage Fridays (highest traffic) for upselling campaigns.
 
-## Stakeholders
+### Stakeholders
 - Cafe Operations Manager: Reduce queues, optimize staff workflows.
 - Finance/Revenue Manager: Drive revenue growth.
 - Marketing Manager: Segment customers, design promotions.
 
-## Disclaimer
+### Limitations
+A large part of the data was lost while trying to match the price, quantity and amount spent column especially the price column. It was impossible to perfectly match the items based on the price because items such as "Smoothie and Sandwich", "Juice and Cake" had the same prices. To avoid data bias, these rows were dropped. 
+### Disclaimer
 This dataset and report are for demonstration purposes only and do not represent any actual company.
 
 
