@@ -91,6 +91,16 @@ Screenshots:
 - In-Store Experience: Customers spend more in-store; enhance dine-in experience and menu variety (e.g., more salad options).
 - Revenue Optimization: Leverage Fridays (highest traffic) for upselling campaigns.
 
+## Stakeholders
+- Cafe Operations Manager: Reduce queues, optimize staff workflows.
+- Finance/Revenue Manager: Drive revenue growth.
+- Marketing Manager: Segment customers, design promotions.
+
+## Disclaimer
+This dataset and report are for demonstration purposes only and do not represent any actual company.
+
+
+
 
 
 
