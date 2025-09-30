@@ -1,4 +1,4 @@
-# Payment Optimization and Customer Behavior Analysis of Justus Café Customers
+## Payment Optimization and Customer Behavior Analysis of Justus Café Customers
 ![Justus Café](cafe.jpg)
 ### Table of Contents
 - [Introduction](#introduction)
