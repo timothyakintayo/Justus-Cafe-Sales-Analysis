@@ -1,5 +1,18 @@
 # Payment Optimization and Customer Behavior Analysis of Justus Café Customers
 ![Justus Café](cafe.jpg)
+### Table of Contents
+- [Introduction](#introduction)
+- [Data Sources](#data-sources)
+- [Business Questions](#business-questions)
+- [Tools Used](#tools-used)
+- [Data Cleaning and Transformation](#data-cleaning-and-transformation)
+- [Data Modeling](#data-modeling)
+- [Dashboard](#dashboard)
+- [Key Insights](#key-insights)
+- [Recommendations](#recommendations)
+- [Stakeholders](#stakeholders)
+- [Limitations](#limitations)
+  
 ### Introduction
 Justus Café is experiencing mixed payment adoption across different transaction values, with heavy cash usage leading to long queues during peak hours. By analyzing customer payment behaviors, item preferences, and sales trends, this project provides actionable insights to:
 - Improve transaction efficiency
@@ -58,7 +71,7 @@ m
    then "Weekend" 
    else "Weekday"
 ```
-** Dataset After Cleaning
+** Dataset After Cleaning**
 The following dataset was obtained after cleaning [Cleaned_Dataset]()
 ### Data Modeling
 In Power Query, the data was splitted into fact and dimension tables and modelled using the diagram view in Power Pivot.
@@ -101,7 +114,7 @@ Screenshots:
 - Marketing Manager: Segment customers, design promotions.
 
 ### Limitations
-A significant part of the data was dropped while trying to match the price, quantity and amount spent column especially the price column. This is because, It was impossible to perfectly match the items based on the price because items such as "Smoothie and Sandwich", "Juice and Cake" had the same prices. To avoid data bias, these rows were dropped. 
+A significant part of the data was dropped while trying to match the price, quantity and amount spent column especially the price column. This is because, it was impossible to perfectly match the items based on the price because items such as "Smoothie and Sandwich", "Juice and Cake" had the same prices. To avoid data bias, these rows were dropped. 
 ### Disclaimer
 This dataset and report are for demonstration purposes only and do not represent any actual company.
 
