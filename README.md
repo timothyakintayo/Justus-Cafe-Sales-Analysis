@@ -72,7 +72,7 @@ m
    else "Weekday"
 ```
 ** Dataset After Cleaning**
-The following dataset was obtained after cleaning [Cleaned_Dataset]()
+The following dataset was obtained after cleaning [Cleaned_Dataset](https://github.com/timothyakintayo/Cafe-Sales-Analysis/blob/main/Cleaned_Cafe_Sales_Data.xlsx)
 ### Data Modeling
 In Power Query, the data was splitted into fact and dimension tables and modelled using the diagram view in Power Pivot.
 - Fact and dimension tables created in Power Query.
@@ -88,10 +88,10 @@ Average Transaction Value = AVERAGE(Fact[New_Total_Spent])
 ### Dashboard
 The interactive dashboard contains two pages
 
-[Interactive Dashboard]()
+![Interactive Dashboard](https://github.com/timothyakintayo/Cafe-Sales-Analysis/blob/main/Cafe_Sales_Analysis.xlsx)
 Screenshots:
-![Dashboard_Page_1]()
-![Dashboard_Page_2]()
+![Dashboard_Page_1](https://github.com/timothyakintayo/Cafe-Sales-Analysis/blob/main/Cafe_Sales_P1.png)
+![Dashboard_Page_2](https://github.com/timothyakintayo/Cafe-Sales-Analysis/blob/main/Cafe_Sales_P2.png)
 
 ### Key Insights
 - Top Product: Salad – highest transactions and revenue.
