@@ -51,7 +51,7 @@ m
    else "Unknown") 
 else try Number.From([Price Per Unit]) otherwise "Unknown"
 ```
-\\ This formula calculates the total amount spent when missing, using price multiplied by quantity
+\\This formula calculates the total amount spent when missing, using price multiplied by quantity
 **Sales Amount Column Calculation**
 ```
 m
@@ -63,7 +63,7 @@ else try Number.From([Total Spent]) otherwise "Unknown"
 ```
 The applied steps can be found in ![Applied_Steps](Applied_Steps.png). 
 
-\\ This formula classifies day into weekday or weekend
+\\This formula classifies day into weekday or weekend
 Day Classification
 ```
 m
