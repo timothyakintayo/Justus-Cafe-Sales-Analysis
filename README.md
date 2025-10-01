@@ -86,6 +86,16 @@ Quarterly Revenue = TOTALQTD([Revenue], Dim_Calendar[Date])
 Total Transactions = COUNT(Dim_Transaction[Transaction ID])
 Average Transaction Value = AVERAGE(Fact[New_Total_Spent])
 ```
+## 🔢 Dynamic Excel Formulas for Automated Insights
+
+To make the dashboard interactive and ensure insights update automatically when new data is refreshed, I used **dynamic Excel formulas** (INDEX, MATCH, MAX, TEXT).  
+These generate text-based insights directly on the dashboard without manual editing.
+
+### Example Formulas with Explanations
+
+```excel
+="Highest Performing Month: "&INDEX(J19:J30,MATCH(MAX(K19:K30),K19:K30,0))&" with "&TEXT(MAX(K19:K30),"$#,##0")&" in sales"
+
 ### Dashboard
 The interactive dashboard contains two pages
 
