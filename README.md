@@ -88,8 +88,7 @@ Average Transaction Value = AVERAGE(Fact[New_Total_Spent])
 ```
 ### Dynamic Excel Formulas for Automated Insights
 
-To make the dashboard interactive and ensure insights update automatically when new data is refreshed, I used **dynamic Excel formulas** (INDEX, MATCH, MAX, TEXT).  
-These generate text-based insights directly on the dashboard without manual editing.
+To make the dashboard interactive and ensure insights update automatically when new data is refreshed, I used **dynamic Excel formulas** (INDEX, MATCH, MAX, TEXT). These generate text-based insights directly on the dashboard without manual editing.
 Find the month with the highest sales and display both the name and the sales value:
 ```
 excel
