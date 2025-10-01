@@ -95,7 +95,7 @@ These generate text-based insights directly on the dashboard without manual edit
 
 ```excel
 ="Highest Performing Month: "&INDEX(J19:J30,MATCH(MAX(K19:K30),K19:K30,0))&" with "&TEXT(MAX(K19:K30),"$#,##0")&" in sales"
-
+```
 ### Dashboard
 The interactive dashboard contains two pages
 
