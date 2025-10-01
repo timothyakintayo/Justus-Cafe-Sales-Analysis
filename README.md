@@ -79,7 +79,7 @@ In Power Query, the data was splitted into fact and dimension tables and modelle
 - Modeled into a star schema in Power Pivot.
 **A snapshot of the data model** ![Data_Model](data_model.png)
 - **Key DAX measures:**
-\\ These measures were created in Power Pivot to calculate revenue trends and transaction metrics for the dashboard.
+\ These measures were created in Power Pivot to calculate revenue trends and transaction metrics for the dashboard.
 ```
 DAX
 Quarterly Revenue = TOTALQTD([Revenue], Dim_Calendar[Date])
