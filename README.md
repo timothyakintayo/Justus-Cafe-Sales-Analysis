@@ -77,6 +77,7 @@ The following dataset was obtained after cleaning [Cleaned_Dataset](https://gith
 In Power Query, the data was splitted into fact and dimension tables and modelled using the diagram view in Power Pivot.
 - Fact and dimension tables created in Power Query.
 - Modeled into a star schema in Power Pivot.
+**A snapshot of the data model** ![Data_Model](data_model.png)
 - **Key DAX measures:**
 \\ These measures were created in Power Pivot to calculate revenue trends and transaction metrics for the dashboard.
 ```
