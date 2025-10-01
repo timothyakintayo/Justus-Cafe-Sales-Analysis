@@ -41,7 +41,7 @@ Café Sales Data: The primary dataset used for this is analysis is the "dirty_ca
 - Pivot Tables & Dashboards – interactive visuals
 ### Data Cleaning and Transformation
 The raw dataset contained missing, inconsistent, and incorrect values. The data cleaning was done using the power query editor. First the rows with no transaction date, no location and no payment methods were removed. The sales data in some instances had price without quantity, quantity without price, sales amount with price but no quantity. Since sales amount equals price times quantity. I created the following If condition logic: 
-// This formula calculates the unit price when missing, using total spent divided by quantity
+//This formula calculates the unit price when missing, using total spent divided by quantity
 **Price Column Calculation**
 ```
 m
@@ -79,7 +79,7 @@ In Power Query, the data was splitted into fact and dimension tables and modelle
 - Modeled into a star schema in Power Pivot.
 **A snapshot of the data model** ![Data_Model](data_model.png)
 - **Key DAX measures:**
-\ These measures were created in Power Pivot to calculate revenue trends and transaction metrics for the dashboard.
+\\These measures were created in Power Pivot to calculate revenue trends and transaction metrics for the dashboard.
 ```
 DAX
 Quarterly Revenue = TOTALQTD([Revenue], Dim_Calendar[Date])
