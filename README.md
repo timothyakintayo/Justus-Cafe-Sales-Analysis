@@ -41,7 +41,7 @@ Café Sales Data: The primary dataset used for this is analysis is the "dirty_ca
 - Pivot Tables & Dashboards – interactive visuals
 ### Data Cleaning and Transformation
 The raw dataset contained missing, inconsistent, and incorrect values. The data cleaning was done using the power query editor. First the rows with no transaction date, no location and no payment methods were removed. The sales data in some instances had price without quantity, quantity without price, sales amount with price but no quantity. Since sales amount equals price times quantity. I created the following If condition logic: 
-//This formula calculates the unit price when missing, using total spent divided by quantity
+\\This formula calculates the unit price when missing, using total spent divided by quantity
 **Price Column Calculation**
 ```
 m
@@ -51,7 +51,7 @@ m
    else "Unknown") 
 else try Number.From([Price Per Unit]) otherwise "Unknown"
 ```
-\\This formula calculates the total amount spent when missing, using price multiplied by quantity
+This formula calculates the total amount spent when missing, using price multiplied by quantity
 **Sales Amount Column Calculation**
 ```
 m
@@ -63,7 +63,7 @@ else try Number.From([Total Spent]) otherwise "Unknown"
 ```
 The applied steps can be found in ![Applied_Steps](Applied_Steps.png). 
 
-\\This formula classifies day into weekday or weekend
+This formula classifies day into weekday or weekend
 Day Classification
 ```
 m
@@ -71,7 +71,7 @@ m
    then "Weekend" 
    else "Weekday"
 ```
-** Dataset After Cleaning**
+**Dataset After Cleaning**
 The following dataset was obtained after cleaning [Cleaned_Dataset](https://github.com/timothyakintayo/Cafe-Sales-Analysis/blob/main/Cleaned_Cafe_Sales_Data.xlsx)
 ### Data Modeling
 In Power Query, the data was splitted into fact and dimension tables and modelled using the diagram view in Power Pivot.
@@ -79,22 +79,26 @@ In Power Query, the data was splitted into fact and dimension tables and modelle
 - Modeled into a star schema in Power Pivot.
 **A snapshot of the data model** ![Data_Model](data_model.png)
 - **Key DAX measures:**
-\\These measures were created in Power Pivot to calculate revenue trends and transaction metrics for the dashboard.
+These measures were created in Power Pivot to calculate revenue trends and transaction metrics for the dashboard.
 ```
 DAX
 Quarterly Revenue = TOTALQTD([Revenue], Dim_Calendar[Date])
 Total Transactions = COUNT(Dim_Transaction[Transaction ID])
 Average Transaction Value = AVERAGE(Fact[New_Total_Spent])
 ```
-## 🔢 Dynamic Excel Formulas for Automated Insights
+### Dynamic Excel Formulas for Automated Insights
 
 To make the dashboard interactive and ensure insights update automatically when new data is refreshed, I used **dynamic Excel formulas** (INDEX, MATCH, MAX, TEXT).  
 These generate text-based insights directly on the dashboard without manual editing.
-
-### Example Formulas with Explanations
-
-```excel
+Find the month with the highest sales and display both the name and the sales value:
+```
+excel
 ="Highest Performing Month: "&INDEX(J19:J30,MATCH(MAX(K19:K30),K19:K30,0))&" with "&TEXT(MAX(K19:K30),"$#,##0")&" in sales"
+```
+Identify the day when the most revenue is generated and show the amount: 
+```
+excel
+="Day with highest revenue is: "&INDEX(AA20:AA26,MATCH(MAX(AC20:AC26),AC20:AC26,0))&" with "&TEXT(MAX(AC20:AC26),"$#,##0")&" in sales"
 ```
 ### Dashboard
 The interactive dashboard contains two pages
